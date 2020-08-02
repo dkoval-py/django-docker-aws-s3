@@ -132,7 +132,7 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 '''
 
 # Save static files localy in the staicfiles folder
-STATIC_ROOT = os.path.join(BASE_DIR, '/home/irftbxkc/web_trial/staticfiles/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'web_trial/staticfiles/')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
