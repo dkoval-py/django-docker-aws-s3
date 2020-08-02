@@ -116,18 +116,29 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
+# Save static files in AWS S3
+'''
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-#AWS_S3_FILE_OVERWRITE = False
+AWS_S3_FILE_OVERWRITE = False
 AWS_ACCESS_KEY_ID = 'AKIATDUYPDS3P3B5ZXSD'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_S3_REGION_NAME = 'eu-west-3'
 AWS_STORAGE_BUCKET_NAME = 'koval.crm.django'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+'''
+
+# Save static files localy in the staicfiles folder
+STATIC_ROOT = os.path.join(BASE_DIR, '/home/irftbxkc/web_trial/staticfiles/')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # email settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
